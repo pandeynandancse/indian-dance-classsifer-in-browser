@@ -1,0 +1,132 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="index.css" >
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+	<!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script> -->
+	<script src="rps-dataset.js"></script>
+</head>
+
+<body style = "background-image: url(https://s3-eu-west-1.amazonaws.com/sales-i-wordpress/wp-content/uploads/2015/12/17112848/black-background.jpg)">
+	<center>
+
+		<br><br>
+		<div  class = "info" id ="model_loaded">
+		</div>
+
+
+		<div style = "margin-top: 2%">
+				<button type="button" class="btn btn-primary sub1" id="0" onclick="handleButton(this)" >
+						BharatNatyam	
+				</button>
+
+			    <div id = "bharat_enter" class = "info">
+				</div>
+
+				<article >
+				        <label for="files" class = "multiple_files">BharatNatyam Select multiple files: </label>
+				        <input id="files" type="file" multiple/>
+				        <output id="result" />
+    			</article>	
+    	</div>
+
+
+
+    	<div style = "margin-top: 2%">
+				<button type="button" class="btn btn-primary sub1" id="1" onclick="handleButton(this)" >		
+					Kathakali
+				</button>
+
+				<div id = "kathkali_enter"  class = "info">
+				</div>
+
+				<article >
+				        <label for="files" class = "multiple_files">Kathakali Select multiple files: </label>
+				        <input id="filess" type="file" multiple/>
+				        <output id="results" />
+    			</article>	
+	    </div>
+
+
+
+    	<div style = "margin-top: 2%">
+				<button type="button" class="btn btn-primary sub1" id="2" onclick="handleButton(this)" >		
+					Manipuri
+				</button>
+
+				<div id = "manipuri_enter"  class = "info">
+				</div>
+
+				<article >
+				        <label for="files" class = "multiple_files">Manipuri Select multiple files: </label>
+				        <input id="filesss" type="file" multiple/>
+				        <output id="resultss" />
+    			</article>	
+	    </div>
+
+
+
+	    <div style = "margin-top: 2%">
+			<div id="bharatsamples">BharatNatyam Samples:</div>
+			<div id="kathkalisamples">Kathakali Samples:</div>
+			<div id="manipurisamples">Manipuri Samples:</div>
+		</div>
+
+		<br>
+	    <button type="button" class="btn btn-success" id="train" onclick="doTraining()" >Train Network</button>
+	    <br><br>
+
+
+
+		<div id="myProgress">
+		  <div id="myBar">0%</div>
+		</div>
+
+
+
+    	 	<div style = "margin-top: 2%">
+				<button type="button" class="btn btn-primary sub1" id="pre"  >		
+					Test images
+				</button>
+			</div>
+				<!--
+
+				<div id = "test_enter" class = "info">
+				</div>
+
+				<article >
+				        <label for="files" class = "multiple_files">Test Images Select multiple files: </label>
+				        <input id="filessss" accept="image/*" type="file" onchange="loadFile(event)"/>
+				        
+				        <output id="resultsss" />
+				    
+    			</article>	
+	    </div> -->
+
+
+
+
+<br>
+	    <input type="file" accept="image/*" onchange="loadFile(event)">
+<img style = 'width:224px ;height:224px;' id="output"/>
+
+
+
+
+	    <div id="prediction">
+	    </div>
+
+	    <br><br><br>
+    </center>
+
+</body>
+
+<script src="index.js"></script>
+</html>
